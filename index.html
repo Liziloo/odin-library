@@ -27,16 +27,18 @@
                 <label for="page-count">Page Count</label>
                 <input type="text" name="page-count" pattern="[0-9]*">
             </div>
-            <fieldset>
-                <div class="input-set">
-                    <label for="read">Already Read</label>
-                    <input type="radio" name="read-status" id="read" value="read" required>
-                </div>
-                <div class="input-set">
-                    <label for="unread">Unread</label>
-                    <input type="radio" name="read-status" id="unread" value="unread" required>
-                </div>
-            </fieldset>
+            <div class="input-set">
+                <label for="read">Already Read</label>
+                <input type="radio" name="read-status" id="read" value="read" required>
+            </div>
+            <div class="input-set">
+                <label for="unread">Unread</label>
+                <input type="radio" name="read-status" id="unread" value="unread" required>
+            </div>
+            <div class="input-set">
+                <label for="thoughts">My Thoughts</label>
+                <textarea name="thoughts" rows="5" cols="50"></textarea>
+            </div>
             <button class="save" type="submit">Save</button>
         </form>
     </dialog>
