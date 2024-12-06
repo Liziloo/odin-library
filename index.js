@@ -64,9 +64,27 @@ const dialog = document.querySelector('dialog');
 const addBookButton = document.querySelector('#add-book-button');
 const closeButton = document.querySelector('.modal-close');
 
-function addBook () {
-    
-}
+
+const saveButton = document.querySelector('.save');
+const bookForm = document.querySelector('form');
+saveButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const formData = new FormData(bookForm);
+    const title = formData.get('title');
+    const author = formData.get('author');
+    const pageCount = formData.get('page-count');
+    const read = formData.get('read-status');
+    let readBool = null;
+    if (read === 'read') {
+        readBool = true;
+    } else {
+        readBool = false;
+    }
+    addBookToLibrary(title, author, pageCount, read);
+    container.innerHTML = '';
+    dialog.close();
+    displayBooks();
+})
 
 
 addBookButton.addEventListener('click', () => {
