@@ -60,4 +60,21 @@ function displayBooks() {
     })
 }
 
+const dialog = document.querySelector('dialog');
+const addBookButton = document.querySelector('#add-book-button');
+const closeButton = document.querySelector('.modal-close');
+
+function addBook () {
+    
+}
+
+
+addBookButton.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener('click', () => {
+    dialog.close();
+});
+
 displayBooks();
