@@ -1,0 +1,12 @@
+#container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.book-title-div {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 10px;
+    text-wrap: balance;
+}
