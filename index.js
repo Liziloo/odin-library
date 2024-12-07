@@ -18,6 +18,10 @@ function Book(title, author, pageCount = '', read, thoughts = '') {
     }
 }
 
+Book.prototype.changeRead = function () {
+    this.read = !this.read;
+}
+
 function addBookToLibrary(title, author, pageCount, read, thoughts) {
     const newBook = new Book(title, author, pageCount, read, thoughts);
     myLibrary.push(newBook);
@@ -68,7 +72,7 @@ function displayBooks() {
             markReadButton.innerHTML = 'Mark as Read';
         }
         markReadButton.addEventListener('click', () => {
-            myLibrary[index].read = !myLibrary[index].read;
+            myLibrary[index].changeRead();
             displayBooks();
         })
         
@@ -87,6 +91,7 @@ function displayBooks() {
 
         container.appendChild(newCard);
     })
+    console.log(myLibrary);
 }
 
 const dialog = document.querySelector('dialog');
@@ -102,14 +107,13 @@ saveButton.addEventListener('click', (event) => {
     const title = formData.get('title');
     const author = formData.get('author');
     const pageCount = formData.get('page-count');
-    const read = formData.get('read-status');
-    let readBool = null;
+    let read = formData.get('read-status');
     if (read === 'read') {
-        readBool = true;
+        read = true;
     } else {
-        readBool = false;
+        read = false;
     }
-    addBookToLibrary(title, author, pageCount, read);
+    addBookToLibrary(title, author, pageCount, read, thoughts);
     container.innerHTML = '';
     dialog.close();
     displayBooks();
