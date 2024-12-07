@@ -31,9 +31,8 @@ addBookToLibrary('Twilight', 'Stephenie Meyer', 372, false, 'Just no.');
 addBookToLibrary('Arrows of the Queen', 'Mercedes Lackey', 320, true);
 
 function displayBooks() {
-
+    container.innerHTML = ''
     myLibrary.map((book, index) => {
-
         const newCard = document.createElement('div');
         newCard.classList.add('book-card');
         newCard.id = `book-${index}`;
@@ -72,7 +71,9 @@ function displayBooks() {
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
+        deleteButton.setAttribute('data-array-index', index);
         deleteButton.innerHTML = 'Delete from Library';
+        deleteButton.addEventListener('click', () => {deleteBook(index)});
 
         newFooter.append(markReadButton, deleteButton);
         newCard.append(newTitleDiv, newAuthor, newThoughts, newFooter);
@@ -107,6 +108,13 @@ saveButton.addEventListener('click', (event) => {
     displayBooks();
 })
 
+function deleteBook(index) {
+    console.log(index);
+    console.log(myLibrary);
+    myLibrary.splice(index, 1);
+    console.log(myLibrary);
+    displayBooks();
+}
 
 addBookButton.addEventListener('click', () => {
     dialog.showModal();
