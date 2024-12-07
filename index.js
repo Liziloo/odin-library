@@ -67,13 +67,20 @@ function displayBooks() {
         } else {
             markReadButton.innerHTML = 'Mark as Read';
         }
+        markReadButton.addEventListener('click', () => {
+            myLibrary[index].read = !myLibrary[index].read;
+            displayBooks();
+        })
         
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
         deleteButton.setAttribute('data-array-index', index);
         deleteButton.innerHTML = 'Delete from Library';
-        deleteButton.addEventListener('click', () => {deleteBook(index)});
+        deleteButton.addEventListener('click', () => {
+            myLibrary.splice(index, 1);
+            displayBooks();
+        });
 
         newFooter.append(markReadButton, deleteButton);
         newCard.append(newTitleDiv, newAuthor, newThoughts, newFooter);
@@ -107,14 +114,6 @@ saveButton.addEventListener('click', (event) => {
     dialog.close();
     displayBooks();
 })
-
-function deleteBook(index) {
-    console.log(index);
-    console.log(myLibrary);
-    myLibrary.splice(index, 1);
-    console.log(myLibrary);
-    displayBooks();
-}
 
 addBookButton.addEventListener('click', () => {
     dialog.showModal();
