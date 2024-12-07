@@ -67,9 +67,9 @@ function displayBooks() {
         const markReadButton = document.createElement('button');
         markReadButton.classList.add('mark-read');
         if (book.read) {
-            markReadButton.innerHTML = 'Mark as Unread';
+            markReadButton.innerHTML = 'Read &#10004;';
         } else {
-            markReadButton.innerHTML = 'Mark as Read';
+            markReadButton.innerHTML = 'Unread';
         }
         markReadButton.addEventListener('click', () => {
             myLibrary[index].changeRead();
@@ -80,7 +80,7 @@ function displayBooks() {
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
         deleteButton.setAttribute('data-array-index', index);
-        deleteButton.innerHTML = 'Delete from Library';
+        deleteButton.innerHTML = 'Delete';
         deleteButton.addEventListener('click', () => {
             myLibrary.splice(index, 1);
             displayBooks();

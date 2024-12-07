@@ -1,8 +1,50 @@
+:root {
+    /* CSS HEX */
+    --chestnut: #a24936ff;
+    --powder-blue: #93b5c6ff;
+    --tea-green: #ddedaaff;
+    --black: #000001ff;
+    --caribbean-current: #08605fff;
+}
+
+body {
+    min-height: 1vh;
+    background-color: var(--tea-green);
+}
+
+button {
+    border-radius: 10px;
+    border: none;
+}
+
+h1 {
+    color: white;
+}
+
 #container {
-    height: 100vh;
+    width: 100vw;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
+}
+
+.header {
+    height: 100px;
+    background-color: var(--caribbean-current);
+}
+
+.header button {
+    background-color: var(--powder-blue);
+}
+
+.book-card {
+    background-color: white;
+}
+
+.book-card button {
+    background-color: var(--chestnut);
+    color: white;
 }
 
 .book-title-div {
