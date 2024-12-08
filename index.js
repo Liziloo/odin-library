@@ -52,7 +52,7 @@ function displayBooks() {
         newCardContent.classList.add('card-content');
 
         const newTitleDiv = document.createElement('div');
-        newTitleDiv.classList.add('book-title-div');
+        newTitleDiv.classList.add('card-header');
 
         const newTitle = document.createElement('div');
         newTitle.classList.add('book-title')
@@ -66,11 +66,11 @@ function displayBooks() {
         newIcon.classList.add('icon');
         newIcon.setAttribute('src', 'media/book-open-page-variant-outline.svg');
 
-        newTitleDiv.append(newTitle, newIcon, newPageCount);
-
         const newAuthor = document.createElement('div');
         newAuthor.classList.add('book-author');
         newAuthor.innerHTML = book.author;
+
+        newTitleDiv.append(newTitle, newIcon, newPageCount, newAuthor);
 
         const newThoughts = document.createElement('div');
         newThoughts.classList.add('thoughts');
@@ -101,7 +101,7 @@ function displayBooks() {
         });
 
         newFooter.append(markReadButton, deleteButton);
-        newCardContent.append(newTitleDiv, newAuthor, newThoughts, newFooter);
+        newCardContent.append(newTitleDiv, newThoughts, newFooter);
 
         newCard.append(newCardLeft, newCardContent, newCardRight);
 
