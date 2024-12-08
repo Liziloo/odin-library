@@ -132,6 +132,80 @@ button {
     border: none;
 }
 
+dialog {
+    position: fixed;
+    margin: auto;
+    padding: 15px;
+    border: 3px solid var(--powder-blue);
+    border-radius: 10px;
+}
+
+form {
+    display: grid;
+    grid-template-areas: 
+        "form-title form-title"
+        "form-author form-author"
+        "form-page-count read-status"
+        "form-thoughts form-thoughts"
+        "form-button form-button";
+    gap: 5px 0;
+}
+
+form, .input-set {
+    grid-template-columns: 100px 400px;
+}
+
+.input-set {
+    text-align: left;
+    display: grid;
+    grid-auto-flow: column;
+    padding: 2px;
+}
+
+input[type='text'], textarea {
+    width: 100%;
+}
+
+input[type='number'] {
+    width: 60px;
+}
+
+#form-title {
+    grid-area: form-title;
+}
+
+#form-author {
+    grid-area: form-author;
+}
+
+#form-page-count {
+    grid-area: form-page-count;
+    text-align: left;
+}
+
+#radios {
+    grid-area: read-status;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+
+#form-thoughts {
+    grid-area: form-thoughts;
+}
+
+form button {
+    grid-area: form-button;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
 #container {
     width: 100%;
     padding: 15px;
