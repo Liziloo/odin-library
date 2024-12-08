@@ -136,6 +136,7 @@ saveButton.addEventListener('click', (event) => {
 })
 
 addBookButton.addEventListener('click', () => {
+    bookForm.reset();
     dialog.showModal();
 });
 
