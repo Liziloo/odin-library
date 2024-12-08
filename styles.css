@@ -199,6 +199,7 @@ button {
     background-color: var(--chestnut);
     color: white;
     padding: 0 10px;
+    border: black solid 1px;
     box-shadow: gray 2px 2px 2px;
 }
 
