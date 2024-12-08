@@ -124,6 +124,7 @@ body {
 
 h1 {
     font-family: 'bitstream_vera_serifbold', serif;
+    margin: 5px;
 }
 
 button {
@@ -141,7 +142,7 @@ button {
 }
 
 .header {
-    height: 100px;
+    height: 110px;
     color: rgb(241, 243, 233);
     background-color: var(--caribbean-current);
     text-align: center;
