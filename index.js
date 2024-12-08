@@ -37,10 +37,19 @@ addBookToLibrary('Arrows of the Queen', 'Mercedes Lackey', 320, true);
 function displayBooks() {
     container.innerHTML = ''
     myLibrary.map((book, index) => {
+
         const newCard = document.createElement('div');
         newCard.classList.add('book-card');
         newCard.id = `book-${index}`;
         newCard.setAttribute('data-read', book.read);
+
+        const newCardLeft = document.createElement('div');
+        const newCardRight = document.createElement('div');
+        newCardLeft.classList.add('card-left');
+        newCardRight.classList.add('card-right');
+
+        const newCardContent = document.createElement('div');
+        newCardContent.classList.add('card-content');
 
         const newTitleDiv = document.createElement('div');
         newTitleDiv.classList.add('book-title-div');
@@ -52,7 +61,12 @@ function displayBooks() {
         const newPageCount = document.createElement('div');
         newPageCount.classList.add('book-page-count');
         newPageCount.innerHTML = book.pageCount;
-        newTitleDiv.append(newTitle, newPageCount);
+
+        const newIcon = document.createElement('img');
+        newIcon.classList.add('icon');
+        newIcon.setAttribute('src', 'media/book-open-page-variant-outline.svg');
+
+        newTitleDiv.append(newTitle, newIcon, newPageCount);
 
         const newAuthor = document.createElement('div');
         newAuthor.classList.add('book-author');
@@ -87,7 +101,9 @@ function displayBooks() {
         });
 
         newFooter.append(markReadButton, deleteButton);
-        newCard.append(newTitleDiv, newAuthor, newThoughts, newFooter);
+        newCardContent.append(newTitleDiv, newAuthor, newThoughts, newFooter);
+
+        newCard.append(newCardLeft, newCardContent, newCardRight);
 
         container.appendChild(newCard);
     })
