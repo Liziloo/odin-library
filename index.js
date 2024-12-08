@@ -1,7 +1,7 @@
 const myLibrary = [];
 const container = document.querySelector('#container');
 
-function Book(title, author, pageCount = '', read, thoughts = '') {
+function Book(title, author, pageCount, read, thoughts) {
     this.title = title;
     this.author = author;
     this.pageCount = pageCount;
@@ -22,7 +22,7 @@ Book.prototype.changeRead = function () {
     this.read = !this.read;
 }
 
-function addBookToLibrary(title, author, pageCount, read, thoughts) {
+function addBookToLibrary(title, author, pageCount = '', read, thoughts = '') {
     const newBook = new Book(title, author, pageCount, read, thoughts);
     myLibrary.push(newBook);
 }
@@ -107,7 +107,6 @@ function displayBooks() {
 
         container.appendChild(newCard);
     })
-    console.log(myLibrary);
 }
 
 const dialog = document.querySelector('dialog');
@@ -129,6 +128,7 @@ saveButton.addEventListener('click', (event) => {
     } else {
         read = false;
     }
+    const thoughts = formData.get('thoughts')
     addBookToLibrary(title, author, pageCount, read, thoughts);
     container.innerHTML = '';
     dialog.close();
