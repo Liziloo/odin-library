@@ -28,7 +28,7 @@ function addBookToLibrary(title, author, pageCount = '', read, thoughts = '') {
 }
 
 addBookToLibrary('Lord of the Rings', 'J.R.R. Tolkien', 1150, true, "The only book I've ever re-read yearly");
-addBookToLibrary('Pride and Prejudice', 'Jane Austen', 448, true, "I like it enough to have read more times htan I can recall. It's a comfort read for me. My favorite adaptation is the BBC miniseries.");
+addBookToLibrary('Pride and Prejudice', 'Jane Austen', 448, true, "I like it enough to have read more times than I can recall. It's a comfort read for me. My favorite adaptation is the BBC miniseries.");
 addBookToLibrary('Things You Save in a Fire', 'Katherine Center', 320, true, "One of the first 'chick-lit'/romance books I read. Made me fall in love with the author's works. Although I can't stand the film adaptation of 'Happiness for Beginners'. It's atrocious.");
 addBookToLibrary('The Sparrow', 'Mary Doria Russell', 528, true, "This is a strange one. Sci-fi, very introspective. Very odd premise. I very much liked it, though I have trouble articulating why. It's very well written.");
 addBookToLibrary('Twilight', 'Stephenie Meyer', 372, false, 'Just no.');
