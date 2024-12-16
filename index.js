@@ -18,10 +18,7 @@ class Book {
             return `${title} by ${author}, ${pageCount} pages, ${readString}`;
         }
     }
-}
-
-Book.prototype.changeRead = function () {
-    this.read = !this.read;
+    changeRead() { this.read = !this.read };
 }
 
 function addBookToLibrary(title, author, pageCount = '', read, thoughts = '') {
@@ -88,8 +85,10 @@ function displayBooks() {
             markReadButton.innerHTML = 'Unread';
         }
         markReadButton.addEventListener('click', () => {
-            deleteBook(index);
+            myLibrary[index].changeRead();
+            displayBooks();
         })
+        
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
@@ -143,7 +142,5 @@ addBookButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
     dialog.close();
 });
-
-
 
 displayBooks();
