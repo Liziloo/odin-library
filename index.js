@@ -1,20 +1,22 @@
 const myLibrary = [];
 const container = document.querySelector('#container');
 
-function Book(title, author, pageCount, read, thoughts) {
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.read = read;
-    this.thoughts = thoughts;
-    this.info = function() {
-        let readString;
-        if (read === true) {
-            readString = 'already read'
-        } else {
-            readString = 'not read yet'
+class Book {
+    constructor(title, author, pageCount = '', read, thoughts = '') {
+        this.title = title;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.read = read;
+        this.thoughts = thoughts;
+        this.info = function() {
+            let readString;
+            if (read === true) {
+                readString = 'already read'
+            } else {
+                readString = 'not read yet'
+            }
+            return `${title} by ${author}, ${pageCount} pages, ${readString}`;
         }
-        return `${title} by ${author}, ${pageCount} pages, ${readString}`;
     }
 }
 
@@ -86,10 +88,8 @@ function displayBooks() {
             markReadButton.innerHTML = 'Unread';
         }
         markReadButton.addEventListener('click', () => {
-            myLibrary[index].changeRead();
-            displayBooks();
+            deleteBook(index);
         })
-        
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
@@ -143,5 +143,7 @@ addBookButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
     dialog.close();
 });
+
+
 
 displayBooks();
