@@ -1,3 +1,6 @@
+import './styles/comeau-reset.css';
+import './styles/styles.css';
+
 const myLibrary = [];
 const container = document.querySelector('#container');
 

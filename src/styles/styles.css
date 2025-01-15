@@ -5,8 +5,8 @@
 
 @font-face {
     font-family: 'aganlight';
-    src: url('fonts/agane_45_light-webfont.woff2') format('woff2'),
-         url('fonts/agane_45_light-webfont.woff') format('woff');
+    src: url('../fonts/agane_45_light-webfont.woff2') format('woff2'),
+         url('../fonts/agane_45_light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -17,8 +17,8 @@
 
 @font-face {
     font-family: 'bitstream_vera_serifbold';
-    src: url('fonts/veraserif-bold-webfont.woff2') format('woff2'),
-         url('fonts/veraserif-bold-webfont.woff') format('woff');
+    src: url('../fonts/veraserif-bold-webfont.woff2') format('woff2'),
+         url('../fonts/veraserif-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -155,7 +155,7 @@ form button {
 }
 
 .card-left {
-    background-image: url('media/leather.jpg');
+    background-image: url('../images/leather.jpg');
     border-radius: 3px 0 0 3px;
 }
 
