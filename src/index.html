@@ -24,7 +24,7 @@
                 </div>
                 <div id="form-page-count">
                     <label for="page-count">Page Count</label>
-                    <input type="number" name="page-count"">
+                    <input type="number" name="page-count" min="0" required>
                 </div>
                 <div id="radios">
                     <div id="form-read">
@@ -40,7 +40,7 @@
                 </div>
                 <div id="form-thoughts" class="input-set">
                     <label for="thoughts">My Thoughts</label>
-                    <textarea name="thoughts" rows="5" cols="50"></textarea>
+                    <textarea name="thoughts" rows="5" cols="50" required></textarea>
                 </div>
                 <button class="save" type="submit">Save</button>
             </form>

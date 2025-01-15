@@ -1,5 +1,6 @@
 import './styles/comeau-reset.css';
 import './styles/styles.css';
+import openBook from './images/book-open-page-variant-outline.svg';
 
 const myLibrary = [];
 const container = document.querySelector('#container');
@@ -66,7 +67,7 @@ function displayBooks() {
 
         const newIcon = document.createElement('img');
         newIcon.classList.add('icon');
-        newIcon.setAttribute('src', 'media/book-open-page-variant-outline.svg');
+        newIcon.setAttribute('src', openBook);
 
         const newAuthor = document.createElement('div');
         newAuthor.classList.add('book-author');
@@ -118,8 +119,7 @@ const closeButton = document.querySelector('.modal-close');
 
 const saveButton = document.querySelector('.save');
 const bookForm = document.querySelector('form');
-saveButton.addEventListener('click', (event) => {
-    event.preventDefault();
+saveButton.addEventListener('click', () => {
     const formData = new FormData(bookForm);
     const title = formData.get('title');
     const author = formData.get('author');
