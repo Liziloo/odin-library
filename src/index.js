@@ -119,22 +119,26 @@ const closeButton = document.querySelector('.modal-close');
 
 const saveButton = document.querySelector('.save');
 const bookForm = document.querySelector('form');
-saveButton.addEventListener('click', () => {
-    const formData = new FormData(bookForm);
-    const title = formData.get('title');
-    const author = formData.get('author');
-    const pageCount = formData.get('page-count');
-    let read = formData.get('read-status');
-    if (read === 'read') {
-        read = true;
-    } else {
-        read = false;
-    }
-    const thoughts = formData.get('thoughts')
-    addBookToLibrary(title, author, pageCount, read, thoughts);
-    container.innerHTML = '';
-    dialog.close();
-    displayBooks();
+saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (bookForm.checkValidity()) {
+        const formData = new FormData(bookForm);
+        const title = formData.get('title');
+        const author = formData.get('author');
+        const pageCount = formData.get('page-count');
+        let read = formData.get('read-status');
+        if (read === 'read') {
+            read = true;
+        } else {
+            read = false;
+        }
+        const thoughts = formData.get('thoughts')
+        addBookToLibrary(title, author, pageCount, read, thoughts);
+        container.innerHTML = '';
+        dialog.close();
+        displayBooks();
+    } else {return false}
+    
 })
 
 addBookButton.addEventListener('click', () => {
@@ -145,5 +149,6 @@ addBookButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
     dialog.close();
 });
+
 
 displayBooks();
